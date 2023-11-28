@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Слайдер изображений</title>
+    <style>
+        .slider{
+            position: relative;
+            width: 400px ;
+            height: 300px;
+        }
+        .image-container{
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+    
+        }
+        img{
+            width: 400px;
+            height: auto;
+        }
+        button{
+            position: absolute;
+            top: 50%;
+            padding: 8px;
+            transform: translateY(-50%);
+            font-size: 14px;
+        }
+        .prev-button{
+            left: 10px;
+            border: 5px solid blue;
+        }
+        .next-button{
+            right: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="image-slider"></div>
+
+    <script>
+    function createImageSlider(images, targetElement) {
+
+            const slider = document.createElement('div');
+            slider.classList.add('slider');
+
+            const imageContainer = document.createElement('div');
+            imageContainer.classList.add('image-container');
+
+            const prevButton = document.createElement('button');
+            prevButton.classList.add('prev-button');
+            prevButton.textContent = 'Назад';
+            prevButton.addEventListener('click',showPrevImage);//!!
+
+            const nextButton = document.createElement('button');
+            nextButton.classList.add('next-button');
+            nextButton.textContent = 'Вперёд';
+            nextButton.addEventListener('click',showNextImage);//!!
+
+
+            slider.appendChild(prevButton);
+            slider.appendChild(nextButton);
+            slider.appendChild(imageContainer);
+
+            images.forEach(imageUrl => {
+                const image = document.createElement('img');
+                image.src = imageUrl;
+                imageContainer.appendChild(image);
+            });
+
+            let currentImageIndex = 0;
+
+            function showPrevImage(){
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                updateImage();
+            }
+
+
+            function showNextImage(){
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                updateImage();
+            }
+
+
+            function updateImage(){
+                const imageElements = imageContainer.querySelectorAll('img');
+                imageElements.forEach((image, index) => {
+                    image.style.display = index === currentImageIndex ? 'block' : 'none';
+                });
+            }
+
+updateImage();
+
+targetElement.appendChild(slider);
+}
+
+const targetElement = document.getElementById('image-slider');
+const images = [
+        'https://images.unsplash.com/photo-1483068612337-c045daaca40e?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&s=6de8746a693acc34ebe9e9a15c4c18d1',
+        'https://images.unsplash.com/photo-1489914099268-1dad649f76bf?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&s=f21f40bb93bae58300e83f7f72ebb5a5',
+        'https://images.unsplash.com/photo-1490100667990-4fced8021649?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&s=247f52de1a292b8a1877b0c7dd77a291',
+        'https://images.unsplash.com/photo-1494783404829-a93883e74b68?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&s=413f5f5c41f4db69a1474d92419601ac'
+        ]
+createImageSlider(images, targetElement);
+
+    </script>
+</body>
+</html>

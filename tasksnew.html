@@ -1,0 +1,57 @@
+<!-- Создайте список задач, где пользователь может добавлять, удалять и отмечать задачи как выполненные. Каждая задача должна иметь название и флажок для отметки выполнения. Отображайте количество выполненных и невыполненных задач. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task manager</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+        #taskManager{
+            display: flex;
+            flex-direction: column;
+            
+        }
+        #taskManager input{
+            width: 30%;
+        }
+        #taskManager button{
+            margin-top: 15px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="taskManager">
+        <input v-model="taskName" placeholder="Название задачи">
+        <input v-model="taskDescription" placeholder="Описание задачи">
+        <button @click="createNewTask">Создать новую задачу</button>
+
+        
+        <div id="taskList">
+            <div style="display: flex; flex-direction: column">
+                <h2>Список задач</h2>
+                <button @click="sortTasks">Отсортировать</button>
+            </div>
+
+            <div :class="{checked: task.checked}" :id="task.id" v-for="task in tasks">
+                <!-- :class="{checked: task.checked} назначаем класс checked, если стоит флажок в чекбоксе :id="task.id назначаем диву id, которое равно id в файле js (Date.now()) v-for - перебор элементов, в элементе data.tasks[] и отображает их при изменении, когда мы нажимаем на кнопку createNewTask -->
+                <!-- v-bind: ==== : -->
+                <div>
+                    <div><strong>Название: </strong>{{task.taskName}}</div>
+                    <div><strong>Описание: </strong>{{task.taskDescription}}</div>
+                    <div>
+                        <label for="checkBox">Выполнена: </label>
+                        <input v-model:checked="task.checked" name="checkBox" @click="checked(task)" type="checkbox">
+                        <!-- v-model:checked="task.checked - значение, чтобы передавалось в массив tasks -->
+                    </div>
+                    <button @click="removeTask(task)">Удалить</button>
+                    <!-- v-on: === @ -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="tasksnew.js"></script>
+</body>
+</html>

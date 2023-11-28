@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimerVue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+         html {
+		box-sizing:border-box;
+  }
+
+  *, *::before, *::after {
+		box-sizing: inherit;
+  }
+
+  #app {
+		text-align: center;
+  }
+
+  body {
+		font-family: sans-serif;
+		padding: 0;
+		margin: 0;
+  }
+  #app {
+		padding: 10px;
+		margin: 0 auto;
+		max-width: 1000px;
+  }
+
+  input[type=number] {
+		padding: 10px;
+		font-size: inherit;
+		width:100%;
+  }
+
+  button {
+		padding:10px;
+  }
+
+  [v-cloak] {
+		opacity:0;
+  }
+
+  label {
+		width:20%;
+		padding:10px 0;
+		display:inline-block;
+  }
+
+  .timer {
+		font-size: 2em;
+		margin: 20px;
+  }
+    </style>
+</head>
+<body>
+    <div id="app" v-cloak>
+        <h1>Set the timer!</h1>
+        <timer-setup v-if="!time" @set-time="setTime"></timer-setup>
+         <div v-else>
+             <timer :time="prettyTime"></timer>
+             <div>
+                  <button v-if="!isRunning" @click="start">Start</button>
+                  <button v-if="isRunning" @click="stop">Stop</button>
+                  <button @click="reset">Reset</button>
+             </div>
+        </div>       
+    </div>
+
+    <script src="timerVueJS.js"></script>   
+</body>
+</html>

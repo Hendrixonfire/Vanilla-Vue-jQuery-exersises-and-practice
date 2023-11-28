@@ -1,0 +1,97 @@
+body{
+    background-color: black;
+    color: white;
+ 
+}
+#buttonWithHiddenText{
+    width: 600px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    border: 2px solid darkgoldenrod;
+    padding: 10px 10px 0 10px;
+    text-align: center;
+}
+.toggleTextButton{
+    border-radius: 50vh;
+    margin-top: 10px;
+    font-size: 1.3rem;
+    background-color: gold;
+}
+.listBlock{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+.listOfGameOfThronesBooks{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    gap: 1rem;
+
+ 
+}
+#pictureWithButton{
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+#pictureSizeButton{
+    font-size: 1.3rem;
+}
+#myPicture{
+    width: 100%;
+    height: 100%;
+}
+.highlight{
+border: 2px solid goldenrod;
+text-decoration: underline;
+}
+
+.highlighted{
+    fill:blue;
+    opacity: 0.8;
+}
+
+.scrollDiv{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#smoothTop{
+    position: fixed;
+ 
+}
+#textBlock{
+    padding-top: 45px;
+    width: 600px;
+    height: 600px;
+    margin: auto;
+}
+#textVanishButton{
+    font-size: 1.2rem;
+    border-radius: 4px;
+}
+#chartDiv{
+    
+    height: 600px;
+    width: 600px;
+}
+#chartDiv{
+    margin: auto;
+}
+text {
+    font-size:  .75em;
+    fill:goldenrod;
+}
+rect {
+    fill: paleturquoise;
+}
+.decorated{
+    text-decoration: underline;
+ 
+}

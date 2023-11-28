@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="jQuery.css">
+
+</head>
+<body>
+    <!--  Используя jQuery, создайте страницу с кнопкой, 
+          и при нажатии на кнопку скройте или
+          покажите блок с текстом на странице. -->
+          <div id="buttonWithHiddenText">
+            <button class="toggleTextButton">Show the text</button>
+            <p id="hiddenText" class="hidden">"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+                sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            <p id="hiddenText" class="hidden">"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+                   sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+          </div>
+
+   <!-- Напишите функцию, которая при наведении курсора на элемент списка
+         применяет анимацию изменения цвета фона элемента с помощью jQuery.  -->
+
+          <div class="listBlock">
+            <ul class="listOfGameOfThronesBooks">
+                List of GOT Books:
+
+                <li id="GoT">A Game of Thrones(1996)</li>
+                <li id="CoK"> A Clash of Kinds(1998)</li>
+                <li id="SoS">A Storm of Swords(2000)</li>
+                <li id="FfC">A Feast for Crows(2005)</li>
+                <li id="DwD">A Dance with Dragons(2011)</li>
+                <li id="WoW">The Winds of Winter(Soon TM)</li>
+            </ul>
+          </div>
+
+          <div id="pictureWithButton">
+            <img id="myPicture" src="https://snowboardaddiction.com/cdn/shop/products/VE_04144-Edit-2019Products_2048px_byVinceEmond_1100x.jpg?v=1670414829" alt="">
+            <button id="pictureSizeButton">Change picture size</button>
+        </div>
+    <div class="scrollDiv">
+        <button id="smoothTop">Sroll up</button>
+    </div>
+    <div id="textBlock">
+    <p >"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+       sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+       <p >"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+       sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+       <p >"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+       sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+       <button id="textVanishButton">Make text vanish!</button>
+    </div>
+    <div id="chartDiv">
+
+    </div>
+</body>
+<script>
+// Используя jQuery, создайте страницу с кнопкой, и при нажатии на 
+//кнопку скройте или покажите блок с текстом на странице.
+
+$(".toggleTextButton").click(function(){
+    console.log("clicked");
+    if (   $(".hidden").is(":hidden") ) {
+     $(".hidden").show();
+    } else
+    $(".hidden").hide();
+    
+ });
+
+
+// Напишите функцию, которая при загрузке страницы скрывает все элементы с классом "hidden"
+// с помощью jQuery. 
+$(document).ready(function(){
+
+
+    $(".hidden").hide();
+
+});
+
+// Напишите функцию, которая при наведении курсора на элемент списка 
+//применяет анимацию изменения цвета фона элемента с помощью jQuery. 
+
+
+
+$("li").mouseover(function(){
+  
+    if ((this.id) === 'GoT'){
+    $(this).animate({
+    color:'RGB(252,0,217)',
+   
+
+})};
+if ((this.id) === 'CoK'){
+    $(this).animate({
+    color:'RGB(255,73,80)',
+ 
+})};
+if ((this.id) === 'SoS'){
+    $(this).animate({
+    color:'RGB(191,51,203)',
+   
+})};
+if ((this.id) === 'FfC'){
+    $(this).animate({
+    color:'RGB(163,85,60)',
+  
+})};
+if ((this.id) === 'DwD'){
+    $(this).animate({
+    color:'RGB(74,175,71)',
+    
+})};
+if ((this.id) === 'WoW'){
+    $(this).animate({
+    color:'RGB(96,202,217)',
+    
+
+})};
+
+$("li").mouseleave(function(){
+    $(this).animate({
+    color:'white',
+    
+});   
+
+})});
+
+// Создайте страницу с изображением и кнопкой.
+// При нажатии на кнопку с помощью jQuery примените
+// анимацию увеличения размера изображения на странице. 
+
+$("#pictureSizeButton").click(function(){
+    if ( $("#myPicture").css('width') === '200px' || $("#myPicture").css('height') === '200px') 
+    {
+        $("#myPicture").animate({
+            width: '100%',
+            height: '100%'
+        });
+      
+ 
+    }
+    else 
+    {
+        $("#myPicture").animate({
+    width: '200px',
+    height: '200px',
+   
+    });
+    $("#myPicture").css({
+    alignSelf:'center'
+    });
+
+    }
+    }); 
+
+//Создайте страницу с несколькими элементами списка. Напишите функцию, 
+//которая с помощью jQuery добавляет класс "highlight" к элементам списка при нажатии на них,
+//а затем при повторном нажатии удаляет этот класс. 
+const addClasstoLists = function(classToAdd){
+ $("li").click(function(){
+    if ( $(this).hasClass(classToAdd) ) {
+        $(this).removeClass(classToAdd);
+    } else {
+        $(this).addClass(classToAdd);
+    }
+ })
+}
+addClasstoLists('highlight');
+ //Напишите функцию, которая при прокрутке страницы с помощью jQuery плавно прокручивает страницу вверх.
+
+ $(document).ready(function(){ 
+  	$('#smoothTop').click(function(){
+        $("html, body").animate({ scrollTop: 0 }, 1000);
+        return false;
+    });
+});
+
+//Создайте страницу с кнопкой и блоком текста. Напишите обработчик события, который при нажатии на кнопку
+// с помощью jQuery анимирует исчезновение блока текста. 
+
+$("#textVanishButton").click(function(){
+    if ($("#textBlock > p").css('opacity') === '0') {
+        $("#textBlock > p").animate({
+        opacity: 1
+        });
+    } else {
+        $("#textBlock > p").animate({
+       opacity: 0
+    });
+}
+});
+
+//Напишите функцию, которая при наведении курсора на изображение с 
+//помощью jQuery плавно изменяет прозрачность изображения. 
+const fadeThePicture = function (picture){
+    $(picture).mouseenter(function(){
+    $(picture).animate ({
+        opacity: 0.2
+    })
+})
+$(picture).mouseleave(function(){
+    $(picture).animate ({
+        opacity: 1
+    })
+})
+}
+fadeThePicture("#myPicture");
+
+
+// ****Написать функцию, которая создает диаграмму из данных и добавляет ее в указанный элемент.
+
+const chartData = [
+  ["Mon", 15],
+  ["Tue", 12],
+  ["Wed", 10],
+  ["Thu", 8],
+  ["Fri", 5],
+  ["Sat", 3],
+  ["Sun", 0],
+];
+let newArr = new Array(); //array of dollars(y-axis))
+let newArrDays = new Array();  //array of days(x-axis))
+//creating y-axis array.
+const dataYarray = function(arr) {
+    
+    arr.forEach(element =>  {
+    return newArr.push(element[1]);
+    });
+}
+//creating x-axis array.
+const dataXarray = function(arr) {
+    
+    arr.forEach(element =>  {
+    return newArrDays.push(element[0]);
+    });
+}
+//finding max in dollar array.
+function dataYmax(array){
+    const maxNumber = Math.max.apply(null, array);
+    return maxNumber;   
+}
+
+//finding min in dollar array.
+function dataYmin(array){
+    const minNumber = Math.min.apply(null, array);
+    return minNumber;   
+}
+
+dataYarray(chartData);
+dataXarray(chartData);
+
+const dataYMax = dataYmax(newArr);
+const dataYMin = dataYmin(newArr);
+
+
+
+//function to draw a chart.
+function drawChart(parentElement) {
+
+const SVG_WIDTH = 600; //
+const SVG_HEIGHT = 400; //
+
+const dataYRange = dataYMax - dataYMin; // range of y axis.
+const numYTicks = 20; // max number of y-axis ticks
+
+  const x0 = 50; 
+  const xAxisLength = SVG_WIDTH - (x0 * 2); 
+
+  const y0 = 50; 
+  const yAxisLength = SVG_HEIGHT - (y0 * 2); 
+
+
+  const xAxisY = y0 + yAxisLength; 
+
+  const barPlotWidth = xAxisLength / chartData.length; 
+
+  let x = x0 + xAxisLength + 5;//
+  
+  let y = xAxisY + 4;
+  let x1 = x0;
+  let y1 = xAxisY;
+  let x2 = x0 + xAxisLength;
+  let y2 = xAxisY;
+
+
+  
+ // y-axis numbers coordinates + data for lines
+  let y2n = y0 + yAxisLength;
+  let y3n = y0 - 12;
+  let y0h = y0 + (Number(newArr[0]) * (yAxisLength / numYTicks));
+  let y1h = y0 + (Number(newArr[1]) * (yAxisLength / numYTicks));
+  let y2h = y0 + (Number(newArr[2]) * (yAxisLength / numYTicks));
+  let y3h = y0 + (Number(newArr[3]) * (yAxisLength / numYTicks));
+  let y4h = y0 + (Number(newArr[4]) * (yAxisLength / numYTicks));
+  let y5h = y0 + (Number(newArr[5]) * (yAxisLength / numYTicks));
+  let y6h = y0 + (Number(newArr[6]) * (yAxisLength / numYTicks));
+  const yValue0h = Math.round(dataYMax - Number(newArr[0]) * (dataYRange / numYTicks));
+  const yValue1h = Math.round(dataYMax - Number(newArr[1]) * (dataYRange / numYTicks));
+  const yValue2h = Math.round(dataYMax - Number(newArr[2]) * (dataYRange / numYTicks));
+  const yValue3h = Math.round(dataYMax - Number(newArr[3]) * (dataYRange / numYTicks));
+  const yValue4h = Math.round(dataYMax - Number(newArr[4]) * (dataYRange / numYTicks));
+  const yValue5h = Math.round(dataYMax - Number(newArr[5]) * (dataYRange / numYTicks));
+  const yValue6h = Math.round(dataYMax - Number(newArr[6]) * (dataYRange / numYTicks));
+  // bars
+  let x0w = x0 + ( 0 * barPlotWidth );
+  let x1w = x0 + ( 1 * barPlotWidth );
+  let x2w = x0 + ( 2 * barPlotWidth );
+  let x3w = x0 + ( 3 * barPlotWidth );
+  let x4w = x0 + ( 4 * barPlotWidth );
+  let x5w = x0 + ( 5 * barPlotWidth );
+  let x6w = x0 + ( 6 * barPlotWidth );
+
+  const sidePadding = 10;
+  const yRatioOne = ( (Number(newArr[0])) - dataYMin) / dataYRange;
+  const yRatioTwo = ((Number(newArr[1])) - dataYMin) / dataYRange;
+  const yRatioThree = ((Number(newArr[2])) - dataYMin) / dataYRange;
+  const yRatioFour = ((Number(newArr[3])) - dataYMin) / dataYRange;
+  const yRatioFive = ((Number(newArr[4])) - dataYMin) / dataYRange;
+  const yRatioSix = ((Number(newArr[5])) - dataYMin) / dataYRange;
+  const yRatioSeven = ((Number(newArr[6])) - dataYMin) / dataYRange;
+
+  const y0w = y0 + (1 - yRatioOne) * yAxisLength;
+  const y1w = y0 + (1 - yRatioTwo) * yAxisLength;
+  const y2w = y0 + (1 - yRatioThree) * yAxisLength;
+  const y3w = y0 + (1 - yRatioFour) * yAxisLength;
+  const y4w = y0 + (1 - yRatioFive) * yAxisLength;
+  const y5w = y0 + (1 - yRatioSix) * yAxisLength;
+  const y6w = y0 + (1 - yRatioSeven) * yAxisLength;
+
+
+  const heightFirstEl = yRatioOne * yAxisLength;
+  const heightSecondEl = yRatioTwo * yAxisLength;
+  const heightThirdEl = yRatioThree * yAxisLength;
+  const heightFourthEl = yRatioFour * yAxisLength;
+  const heightFifthEl = yRatioFive * yAxisLength;
+  const heightSixthEl = yRatioSix * yAxisLength;
+  const heightSeventhEl = yRatioSeven * yAxisLength;
+
+
+
+    let html = `
+    <svg width=${SVG_WIDTH} height=${SVG_HEIGHT}>
+      {/* X axis */}
+      <line x1=${x1} y1=${y1} x2=${x2} y2=${y2} style="stroke:rgb(255,255,255);stroke-width:2"/>
+        <line x1=${x1} y1=${y1} x2=${x2} y2=${y2} style="stroke:rgb(255,255,255);stroke-width:2"/>
+      <text x=${x} y=${y} fill="white">
+        Day
+      </text>
+
+      {/* Y axis */}
+      <line x1=${x1} y1=${y0} x2=${x0} y2=${xAxisY} style="stroke:rgb(255,255,255);stroke-width:2"/>
+      <g key=${newArr[0]}>
+      <line x1=${x0} y1=${y0h} x2=${x0 - 5} y2=${y0h}  style="stroke:rgb(255,255,255);stroke-width:2" } />
+      <text x=${x0 - 5} y=${y0h + 5} text-anchor="end"  fill="white" >
+             ${yValue0h}
+            </text>
+      </g>
+      <g key=${newArr[1]}>
+      <line x1=${x0} y1=${y1h} x2=${x0 - 5} y2=${y1h}  style="stroke:rgb(255,255,255);stroke-width:2" } />
+      <text x=${x0 - 5} y=${y1h + 5} text-anchor="end" fill="white" >
+             ${yValue1h}
+            </text>
+      </g>
+      <g key=${newArr[2]}>
+      <line x1=${x0} y1=${y2h} x2=${x0 - 5} y2=${y2h}  style="stroke:rgb(255,255,255);stroke-width:2" } />
+      <text x=${x0 - 5} y=${y2h + 5} text-anchor="end" fill="white" >
+             ${yValue2h}
+            </text>
+      </g>
+      <g key=${newArr[3]}>
+      <line x1=${x0} y1=${y3h} x2=${x0 - 5} y2=${y3h}  style="stroke:rgb(255,255,255);stroke-width:2" } />
+      <text x=${x0 - 5} y=${y3h + 5} text-anchor="end"  fill="white">
+             ${yValue3h}
+            </text>
+      </g>
+      <g key=${newArr[4]}>
+      <line x1=${x0} y1=${y4h} x2=${x0 - 5} y2=${y4h}  style="stroke:rgb(255,255,255);stroke-width:2" } />
+      <text x=${x0 - 5} y=${y4h + 5} text-anchor="end" fill="white">
+              ${yValue4h}
+            </text>
+      </g>
+      <g key=${newArr[5]}>
+      <line x1=${x0} y1=${y5h} x2=${x0 - 5} y2=${y5h}  style="stroke:rgb(255,255,255);stroke-width:2" } />
+      <text x=${x0 - 5} y=${y5h + 5} text-anchor="end"  fill="white">
+             ${yValue5h}
+            </text>
+      </g> 
+      <g key=${newArr[6]}>
+      <line x1=${x0} y1=${y6h} x2=${x0 - 5} y2=${y6h}  style="stroke:rgb(255,255,255);stroke-width:2" } />
+      <text x=${x0 - 5} y=${y6h + 5} text-anchor="end"  fill="white">
+             ${yValue6h}
+            </text>
+      </g>
+      
+      <text x=${x0} y=${y3n} fill="white"  text-anchor="middle" >
+       $
+      </text>
+
+      /* Bars */
+
+      <g id=${newArr[0]}>
+      <rect x=${x0w + (sidePadding / 2) } y=${y0w} width=${barPlotWidth - sidePadding} height=${heightFirstEl} fill="white"/>
+      <text id="hoverText" class="hidden" x=${x0w + barPlotWidth - sidePadding + (sidePadding / 2) + 70} y=${y0w} text-anchor="middle">
+        We've made: ${newArr[0]}$ on ${newArrDays[0]}!
+        </text>
+      <text id="days" x=${x0w + (barPlotWidth / 2) } y=${xAxisY + 16} text-anchor="middle">
+        ${newArrDays[0]}
+        </text>
+       
+      </g>
+
+      <g id=${newArr[1]}>
+        <rect x=${x1w + (sidePadding / 2) } y=${y1w} width=${barPlotWidth - sidePadding} height=${heightSecondEl} fill="white"/>
+        <text id="hoverText" class="hidden"  x=${x1w + barPlotWidth - sidePadding + (sidePadding / 2) + 70} y=${y1w} text-anchor="middle">
+        We've made: ${newArr[1]}$ on ${newArrDays[1]}!
+    </text>
+      <text id="days" x=${x1w + (barPlotWidth / 2) } y=${xAxisY + 16} text-anchor="middle">
+        ${newArrDays[1]}
+        </text>
+      
+      </g>
+
+      <g id=${newArr[2]}>
+        <rect x=${x2w + (sidePadding / 2) } y=${y2w} width=${barPlotWidth - sidePadding} height=${heightThirdEl} fill="white"/>
+        <text id="hoverText" class="hidden" x=${x2w + barPlotWidth - sidePadding + (sidePadding / 2) + 70} y=${y2w} text-anchor="middle">
+        We've made: ${newArr[2]}$ on ${newArrDays[2]}!
+    </text>
+      <text id="days" x=${x2w + (barPlotWidth / 2) } y=${xAxisY + 16} text-anchor="middle">
+        ${newArrDays[2]}
+        </text>
+      
+      </g>
+
+      <g id=${newArr[3]}>
+        <rect x=${x3w + (sidePadding / 2) } y=${y3w} width=${barPlotWidth - sidePadding} height=${heightFourthEl} fill="white"/>
+        <text   class="hidden"  x=${x3w + barPlotWidth - sidePadding + (sidePadding / 2) + 70} y=${y3w} text-anchor="middle">
+        We've made: ${newArr[3]}$ on ${newArrDays[3]}!
+    </text>
+      <text id="days" x=${x3w + (barPlotWidth / 2) } y=${xAxisY + 16} text-anchor="middle">
+        ${newArrDays[3]}
+        </text>
+      
+      </g>
+
+      <g id=${newArr[4]}>
+        <rect x=${x4w + (sidePadding / 2) } y=${y4w} width=${barPlotWidth - sidePadding} height=${heightFifthEl} fill="white"/>
+        <text   class="hidden"  x=${x4w + barPlotWidth - sidePadding + (sidePadding / 2) + 70} y=${y4w} text-anchor="middle">
+        We've made: ${newArr[4]}$ on ${newArrDays[4]}!
+    </text>
+      <text id="days" x=${x4w + (barPlotWidth / 2) } y=${xAxisY + 16} text-anchor="middle">
+        ${newArrDays[4]}
+        </text>
+      
+      </g>
+
+      <g id=${newArr[5]}>
+        <rect x=${x5w + (sidePadding / 2) } y=${y5w} width=${barPlotWidth - sidePadding} height=${heightSixthEl} fill="white"/>
+        <text  class="hidden" x=${x5w + barPlotWidth - sidePadding + (sidePadding / 2) + 70} y=${y5w} text-anchor="middle">
+        We've made: ${newArr[5]}$ on ${newArrDays[5]}!
+    </text>
+      <text id="days" x=${x5w + (barPlotWidth / 2) } y=${xAxisY + 16} text-anchor="middle">
+        ${newArrDays[5]}
+        </text>
+      
+      </g>
+
+      <g id=${newArr[6]}>
+        <rect x=${x6w + (sidePadding / 2) } y=${y6w} width=${barPlotWidth - sidePadding} height=${heightSeventhEl} fill="white"/>
+        <text  class="hidden" x=${x6w + barPlotWidth - sidePadding + (sidePadding / 2) } y=${y6w - 15} text-anchor="middle" >
+        We've made: ${newArr[6]}$ on ${newArrDays[6]}!
+    </text>
+      <text id="days" x=${x6w + (barPlotWidth / 2) } y=${xAxisY + 16} text-anchor="middle">
+        ${newArrDays[6]}
+        </text>
+      
+     
+       
+      </g>
+
+    </svg> `
+   
+  ;
+  document.getElementById(parentElement).innerHTML = html;
+}
+drawChart("chartDiv");
+
+const addClasstoBars = function(classToAdd){
+ $("rect").mouseout(function(){
+    if ( $(this).hasClass(classToAdd) ) {
+        $(this).removeClass(classToAdd);
+     
+
+    } 
+       })
+$("rect").mouseover(function(){
+    $(this).addClass(classToAdd);
+   
+
+});
+}
+const addClasstoText = function(classToAdd){
+ $("rect").mouseout(function(){
+    if ( $(this).next().hasClass(classToAdd) ) {
+        $(this).next().removeClass(classToAdd);
+     
+
+    } 
+       })
+$("rect").mouseover(function(){
+    $(this).next().addClass(classToAdd);
+   
+
+});
+}
+addClasstoBars('highlighted');
+addClasstoText('decorated');
+const showHiddenText = function(){
+    $("rect").mouseover(function(){
+   
+    if (   $(".hidden").is(":hidden") ) {
+        $(this).next().show();
+
+ };
+   $("rect").mouseout(function(){
+    $(this).next().hide();
+});
+});
+}
+showHiddenText();
+</script>
+</html>

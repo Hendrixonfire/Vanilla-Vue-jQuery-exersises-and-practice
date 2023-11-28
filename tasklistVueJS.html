@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+      body{
+          text-align: center;
+         background-color: black;
+         color: wheat;
+      }
+     
+  
+     .flex{
+      display: flex;
+      flex-direction: row;
+      flex-wrap:wrap;
+     }
+     .grid{
+      justify-content: center;
+    justify-items: baseline;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 218px 113px;
+    gap: 0.5em;
+     }
+     .grid-list{
+     
+      grid-column: 1;
+     }
+     .grid-button{
+      display: grid;
+     align-items: start;
+      grid-column: 2;
+     }
+     .filterDiv{
+     
+      display: flex;
+      justify-content: center;
+     
+      border:2px solid black;
+      width: 600px;
+      margin: auto;
+      gap: .9em;
+     }
+     .doneClass{
+      background-color: green;
+      color:whitesmoke
+     }
+    .inputField{
+      width: 200px;
+    }
+    .listItemTransition-enter-active{
+      animation: bounce-in .5s;
+    }
+    .listItemTransition-leave-active{
+      animation: bounce-in .5s reverse;
+    }
+    @keyframes bounce-in {
+      0%{
+        transform: scale(0);
+      }
+      50%{
+        transform: scale(1.3);
+      }
+      100%{
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+<div id="tasklist">
+  <h1> My task List for this week</h1>
+  <hr>
+  <input class="inputField" type="text" v-model="newTask" v-on:keypress.enter="addTasks()"  placeholder="Enter the tasks and press enter">
+  <ul class="grid">
+    <transition-group name="listItemTransition" class="grid">
+    <li class="grid-list" v-for="(task, index) in tasks" :key="index"  v-on:click="removeTasks(index)" v-on:click.right.ctrl="toggleDone()"> {{task.name}} (click to remove): </li>
+    <button  class="grid-button" v-for="(task, index) in tasks" :key="index" v-on:click="changeStatus(index)" v-bind:class="{doneClass: tasks[index].done === 'Task is done'}">{{task.done}}</button>
+    </transition-group>
+  </ul>
+  <div  v-on:click="isCompleted()">Number of done tasks (click to filter all currently done tasks): {{numberOfDone}}</div>
+  <div  v-on:click="isPending()">Number of pending tasks (click to filter all currently pending tasks): {{numberOfPending}}</div>
+
+  <div class="filterDiv">
+    <table>
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr
+          v-for="task in getTasks"
+          v-bind:key="task.id"
+          v-bind:class="{ isPending: !showDone }"
+        >
+          <td>{{task.name}}: "{{task.done}}"</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>   
+<script src="tasklistVueJS.js"></script>
+</body>
+</html>

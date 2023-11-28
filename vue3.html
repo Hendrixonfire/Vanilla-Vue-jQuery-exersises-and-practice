@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue app3</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+<div id="app3">
+    <input  v-model="firstName" placeholder="Name"> 
+    <input  v-model="lastName" placeholder="LastName"> 
+
+    <p v-model="showMyFullName">Full name is:{{fullName}}</p>
+ 
+   
+    <button @click="computeFullName">Show the name</button>
+</div>
+<script src="vue3.js"> </script>    
+</body>
+</html>

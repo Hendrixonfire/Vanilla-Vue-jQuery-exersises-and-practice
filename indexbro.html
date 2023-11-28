@@ -1,0 +1,57 @@
+<!-- Задача 2: Список задач
+Создайте список задач, где пользователь может добавлять, удалять и отмечать задачи как выполненные. 
+Каждая задача должна иметь название и флажок для отметки выполнения. Отображайте количество выполненных и невыполненных задач. -->
+
+<!-- Задача 3: Фильтрация списка
+Расширьте задачу со списком задач, чтобы добавить возможность фильтрации задач по их статусу (выполненные/невыполненные) 
+или по ключевому слову. При изменении фильтра, список задач должен автоматически обновляться. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список задач</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylebro.css">
+</head>
+<body>
+    <div id="list">
+        <div class="list">
+            <h1>Список задач</h1>
+            <input v-model="name" placeholder="Задание">
+            <button @click="addName(id++)">Добавить</button>
+            <div class="filter-list">
+                <button @click="openFilter" class="filter-button">Фильтр</button>
+                <div v-if="showContent"> 
+                <select v-model="statusFilter">
+                    <option value="">Все</option>
+                    <option value="выполнено">Выполненные</option>
+                    <option value="невыполнено">Невыполненные</option>
+                  </select>
+
+                  <div>
+                    <input v-model="keywordFilter" placeholder="Введите слово...">
+                  </div>
+
+                </div>
+            </div>
+        </div>
+        <p>Всего задач: {{affairs.length}}</p>
+        <div v-for= "(name, index) in filteredTasks" :key="name.id">
+            <p>
+                <span>{{index + 1}}.</span>
+                <span class="name" :class="{nameCheck: name.isComplete}">{{name.text}}</span>
+                <input v-model="name.isComplete" type="checkbox"> 
+                <button @click="removeName(index)">Удалить</button>
+            </p>
+        </div>
+    </div>
+    <script src="vuebro.js"></script>
+</body>
+</html>

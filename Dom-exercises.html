@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href=
+    "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src=
+    "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+        </script>
+        <!-- Popper JS -->
+        <script src=
+    "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js">
+        </script>
+        <!-- Latest compiled JavaScript -->
+        <script src=
+    "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js">
+        </script>
+    <link rel="stylesheet" href="Dom-exrsises.css">
+
+</head>
+    <body>
+         <!-- 
+        <div class='parent'>
+            <div class='slider'>
+             <button  type="button" id='right' class='right' name="button">
+          
+                 <svg version="1.1" id="Capa_1" width='40px' height='40px ' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                   viewBox="0 0 477.175 477.175" style="enable-background:new 0 0 477.175 477.175;" xml:space="preserve">
+                 <g>
+                  <path style='fill: #9d9d9d;' d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5
+                    c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z
+                    "/>
+                 </g>
+          
+                 </svg>
+          
+                 </button>
+             <button  type="button" id='left' class='left' name="button">
+                 <svg version="1.1" id="Capa_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                   viewBox="0 0 477.175 477.175" style="enable-background:new 0 0 477.175 477.175;" xml:space="preserve">
+                 <g>
+                  <path style='fill: #9d9d9d;' d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225
+                    c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z"/>
+                 </g>
+                 </svg>
+                 </button>
+             <svg id='svg2' class='up2' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle id='circle1' class='circle1 steap' cx="34px" cy="49%" r="20"  />
+                <circle id='circle2' class='circle2 steap' cx="34px" cy="49%" r="100"  />
+                <circle id='circle3' class='circle3 steap' cx="34px" cy="49%" r="180"  />
+                <circle id='circle4' class='circle4 steap' cx="34px" cy="49%" r="260"  />
+                <circle id='circle5' class='circle5 steap' cx="34px" cy="49%" r="340"  />
+                <circle id='circle6' class='circle6 steap' cx="34px" cy="49%" r="420"  />
+                <circle id='circle7' class='circle7 steap' cx="34px" cy="49%" r="500"  />
+                <circle id='circle8' class='circle8 steap' cx="34px" cy="49%" r="580"  />
+                <circle id='circle9' class='circle9 steap' cx="34px" cy="49%" r="660"  />
+              </svg>
+             <svg id='svg1' class='up2' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle id='circle10' class='circle10 steap' cx="648px" cy="49%" r="20"  />
+                <circle id='circle11' class='circle11 steap' cx="648px" cy="49%" r="100"  />
+                <circle id='circle12' class='circle12 steap' cx="648px" cy="49%" r="180"  />
+                <circle id='circle13' class='circle13 steap' cx="648px" cy="49%" r="260"  />
+                <circle id='circle14' class='circle14 steap' cx="648px" cy="49%" r="340"  />
+                <circle id='circle15' class='circle15 steap' cx="648px" cy="49%" r="420"  />
+                <circle id='circle16' class='circle16 steap' cx="648px" cy="49%" r="500"  />
+                <circle id='circle17' class='circle17 steap' cx="648px" cy="49%" r="580"  />
+                <circle id='circle18' class='circle18 steap' cx="648px" cy="49%" r="660"  />
+              </svg>
+             <div id='slide1' class='slide1 up1'>MOUNTAIN</div>
+             <div id='slide2' class='slide2'>BEACH</div>
+             <div id='slide3' class='slide3'>FOREST</div>
+             <div id='slide4' class='slide4'>DESERT</div>
+            </div>
+           </div>
+
+            -->
+
+
+        <!--    Создайте страницу с кнопкой, и при нажатии на кнопку 
+                измените цвет фона страницы на случайный цвет.  Напишите функцию, которая добавляет новый
+                элемент списка (<li>) в существующий список (<ul>) на странице.   -->
+
+        <div id="pictureGaleryDiv">
+          
+        </div>
+
+        <div id="buttonWithAList">
+        <button onclick="changeBackgroundColor(), addNewListItem()">Change Color</button>
+        <ul id="myList" class="myListClass">
+            <li class="list" id="listItemOne" >Item one</li>
+            <li class="list" id="listItemTwo">Item two</li>
+        </ul>
+        </div>
+        
+        <!--  Создайте форму с полем ввода и кнопкой. При отправке формы выведите введенное значение в консоль.  -->
+
+        <div id="inputWithAButton">
+            <input type="text" id="userInput">
+            <button  onclick="getUserInput()" id="inputButton"> 
+                Submit
+            </button>
+
+        </div>
+        
+        <!--  Напишите функцию, которая удаляет все дочерние элементы указанного элемента на странице.   -->
+
+        <div id="removeItemDiv">
+            <button onclick="deleteAllChildNodes('#myList')">Remove children</button>
+            <button onclick="deleteLastChild('#myList')">Remove Last item</button>
+        
+        <!--  Создайте страницу с изображением и кнопкой. При нажатии на кнопку измените источник изображения на другое изображение.  -->
+
+        <div id="pictureWithButton">
+            <img id="myPicture" src="https://snowboardaddiction.com/cdn/shop/products/VE_04144-Edit-2019Products_2048px_byVinceEmond_1100x.jpg?v=1670414829" alt="">
+            <button onclick="changeThePicture()">Change the picture</button>
+            <div id="addMultTable">Add table here!</div>
+        </div>
+
+        <!--  Создайте страницу с формой, содержащей несколько полей ввода. При отправке формы 
+              проверьте, заполнены ли все поля, и выведите сообщение об ошибке,
+              если хотя бы одно поле осталось пустым. (bootstrap + jquery validation)  -->
+
+        <div class="container">
+                <form>
+                    <div class="form-group">
+                        <label for="user">
+                            Username:
+                        </label>
+                        <input type="text"
+                               name="username"
+                               id="usernames" required
+                               class="form-control">
+                    </div>
+     
+                    <div class="form-group">
+                        <label for="user">
+                            Email:
+                        </label>
+                        <input type="email"
+                               name="email"
+                               id="email" required
+                               class="form-control">
+                    </div>
+     
+                    <div class="form-group">
+                        <label for="password">
+                            Password:
+                        </label>
+                        <input type="password"
+                               name="pass"
+                               id="password" required
+                               class="form-control">
+                     
+                    </div>
+     
+                    <div class="form-group">
+                        <label for="conpassword">
+                            Confirm Password:
+                        </label>
+                        <input type="password"
+                               name="username"
+                               id="conpassword" required
+                               class="form-control">
+                   
+                    </div>
+     
+                    <input type="submit"
+                           id="submitbtn"
+                           value="Submit"
+                           class="btn btn-primary">
+                </form>
+        
+        </div>
+
+        <!--  Напишите функцию, которая перебирает все ссылки (<a>) на странице и добавляет 
+              им атрибут target="_blank", чтобы они открывались в новой вкладке.   -->
+
+        <div id="newPageRef">
+            <a href="">Link one</a>
+            <a href="">Link two</a>
+            <a href="">Link three</a>
+        </div>
+
+        <!--  Создайте страницу с кнопкой "Показать больше", и при каждом нажатии на
+              кнопку добавляйте новый абзац (<p>) с текстом 
+              "Дополнительный параграф" внутри определенного контейнера.  -->
+        <div class="flexbox">
+            <div id="showMore">
+                <p class="highlight">Some text</p>
+                <button onclick="showMoreText()">Show more</button>
+            </div>
+
+        <!--  Напишите функцию, которая изменяет текст всех элементов с классом 
+              "highlight" на странице, заменяя их содержимое
+               на "Выделено!".   -->
+
+            <div class="highlight">
+                <p class="highlight">Some text</p>
+                <button onclick="changeHighlited('highlight')">Highlight</button>
+            </div>
+        </div>
+
+        <!--Создайте страницу с изображением и двумя кнопками: "Увеличить" и 
+            "Уменьшить". При нажатии на каждую кнопку измените размер
+             изображения соответственно. -->
+
+             <div id="pictureWithButton">
+                <img id='myPictureTwo' src="https://snowboardaddiction.com/cdn/shop/products/VE_04144-Edit-2019Products_2048px_byVinceEmond_1100x.jpg?v=1670414829" alt="">
+                <button onclick="makePictureBigger('myPictureTwo')">Bigger picture</button>
+                <button onclick="makePictureSmaller('myPictureTwo')">Smaller Picture</button>
+            </div>
+
+
+
+           <!--Создайте кнопку, и при наведении на нее измените цвет текста кнопки на случайный цвет.  -->
+
+             <div id="hoverButton">
+              
+                <button id="myButton">Hover on me</button>
+                
+            </div>
+
+
+            <!--Создайте форму с полем ввода и кнопкой. При фокусировке на поле ввода измените его 
+                фоновый цвет, а при потере фокуса восстановите исходный цвет.   -->
+
+
+                <div id="inputWithAButtonTwo">
+                    <input type="text" id="userInputTwo">
+                    <button  onclick="getUserInput()" id="inputButtonTwo"> 
+                        Submit
+                    </button>
+        
+                </div>
+
+              <!--  Создайте кнопку, и при удержании (удержании нажатой) на ней запустите 
+                    таймер, который каждую секунду 
+                    выводит в консоль сообщение "Прошла секунда".  -->  
+                    <div id="hoverButton">
+              
+                        <button id="timerButton">Timer</button>
+                        
+                    </div>
+
+             <!--Создайте форму с полем ввода и кнопкой "Отправить". Напишите обработчик события, который
+                 при отправке формы проверяет, содержит ли поле ввода только цифры,
+                  и выводит сообщение об ошибке, если введены другие символы. 
+                    -->  
+
+                     <div id="inputWithAButtonTwoThree">
+                        <h1>Enter your regestration number</h1>
+                        <input type="text" id="userInputOnlyNumbers">
+                        <button  id="inputButtonRegNumber"> 
+                             Send
+                        </button>
+                    </div>
+            <!--Напишите функцию, которая при наведении на ссылку в
+                нижнем левом углу окна браузера отображает всплывающую подсказку с дополнительной информацией.  
+                    -->  
+                <section>
+                    <div class="all-tooltip">
+                      
+                            <div class="pin">
+                                <ion-icon name="add-circle"></ion-icon>
+                             </div>
+                        <div class="tooltip-content">
+                            <div class="arrow"></div>
+                            <div class="content">
+                              <h1>This is a title</h1>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, natus.</p>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, natus.</p>
+                              <button>Buy Now $199</button>
+                            </div>
+                        </div>
+              
+                </div>
+           
+                </section>
+
+          
+
+
+
+          
+        <!--  Javascript  -->
+  
+        <script>
+
+        // Создайте страницу с кнопкой, и при нажатии на кнопку 
+        //     измените цвет фона страницы на случайный цвет. 
+          function changeBackgroundColor() {
+            var red = Math.floor(Math.random() * 256);
+            var green = Math.floor(Math.random() * 256);
+            var blue = Math.floor(Math.random() * 256);
+            var color = 'rgb(' + red + ', ' + green + ', ' + blue + ')';
+            document.body.style.backgroundColor = color;
+          }
+
+        // Напишите функцию, которая добавляет новый
+        //    элемент списка (<li>) в существующий список (<ul>) на странице.  
+
+          function addNewListItem() {
+            const listParent = document.getElementById("myList");
+            const listItem = document.createElement("li");
+            const node = document.createTextNode("This is a new list item");
+            listItem.appendChild(node);
+            listParent.appendChild(listItem);
+          }
+      
+        //Создайте форму с полем ввода и кнопкой. При отправке формы выведите введенное значение в консоль. 
+
+          function getUserInput() {
+            const userInput = document.getElementById("userInput").value;
+            if (String(userInput).length === 0 ) {
+                return alert("Your input is empty. Please type something")
+            } else {
+            return alert(`${userInput}`);
+            }
+          }
+
+        // Напишите функцию, которая удаляет все дочерние элементы указанного элемента на странице. 
+
+          function deleteAllChildNodes(parent) {
+            const parentNode = document.querySelector(parent);
+            const children = parentNode.childNodes;
+            console.log(children);
+            let counter = 0;
+            while (children.length > 0) {
+         
+            children.forEach(element => {
+                element.remove();
+                counter ++;
+                return counter;
+            });
+          }
+          return alert(`Number of nodes removed: ${counter}`);
+
+        }
+        // ***Написать функцию, которая удаляет последний элемент из списка.
+        function deleteLastChild(parent){
+            const parentNode = document.querySelector(parent);
+            const lastChild = parentNode.lastElementChild;
+            parentNode.removeChild(lastChild);
+
+        }
+
+        //Создайте страницу с изображением и кнопкой. При нажатии на кнопку измените источник изображения на другое изображение. 
+
+           function changeThePicture() {
+           return document.getElementById("myPicture").src = "https://snowboardaddiction.com/cdn/shop/products/VE_04146-Edit-2019Products_2048px_byVinceEmond_1100x.jpg?v=1670414707"
+           }
+
+        //Напишите функцию, которая перебирает все ссылки (<a>) на странице и добавляет
+        //им атрибут target="_blank", чтобы они открывались в новой вкладке. 
+
+            function setNewRefTarget(targetAtt){
+                const links = document.querySelectorAll("a");
+                links.forEach(link => {
+                    link.target = targetAtt;
+                })
+            }
+
+            setNewRefTarget("_blank");
+
+        //Создайте страницу с кнопкой "Показать больше", и при каждом нажатии на 
+        //кнопку добавляйте новый абзац (<p>) с текстом 
+        //"Дополнительный параграф" внутри определенного контейнера. 
+
+            function showMoreText(){
+                 const changeBlock = document.getElementById("showMore");
+                 const para = document.createElement("p");
+                 const node = document.createTextNode("Some new text");
+                 para.appendChild(node);
+                 changeBlock.appendChild(para);
+                 para.scrollIntoView();
+            }
+
+        //Напишите функцию, которая изменяет текст всех элементов с классом 
+        //"highlight" на странице, заменяя их содержимое
+        //на "Выделено!". 
+
+            function changeHighlited(highlightedID){
+              const nodesToChange = document.getElementsByClassName(highlightedID);
+              for (let i = 0; i < nodesToChange.length; i++) {
+                  nodesToChange[i].innerHTML = "highlighted";
+              }
+            }
+
+        //Создайте страницу с изображением и двумя кнопками: "Увеличить" и "Уменьшить".
+        //При нажатии на каждую кнопку измените размер
+        //изображения соответственно. 
+               let  height = 150;
+               let  width = 150;
+            function makePictureBigger(pictureID){
+                height += 5;
+                width += 5;
+             document.getElementById(pictureID).style.height = height + 'px';
+             document.getElementById(pictureID).style.width = width + 'px';
+            }
+            function makePictureSmaller(pictureID){
+                height -= 5;
+                width -= 5;
+             document.getElementById(pictureID).style.height = height + 'px';
+             document.getElementById(pictureID).style.width = width + 'px';
+            }
+
+         //Создайте кнопку, и при наведении на нее измените цвет текста кнопки на случайный цвет. 
+
+         document.getElementById("myButton").addEventListener("mouseover", function(){
+            var red = Math.floor(Math.random() * 256);
+            var green = Math.floor(Math.random() * 256);
+            var blue = Math.floor(Math.random() * 256);
+            var color = 'rgb(' + red + ', ' + green + ', ' + blue + ')';
+            document.getElementById("myButton").style.color = color;
+         })
+
+         
+         //Напишите функцию, которая при клике на любой элемент на 
+         //странице выводит в консоль его тег (например, "DIV", "P", "A"). 
+         const elementPressed = e => {
+            const element = e.target;
+            const tag = element.tagName;
+            return console.log(tag);
+         }
+        document.addEventListener("click", elementPressed) 
+           
+        //Создайте форму с полем ввода и кнопкой. При фокусировке на поле ввода
+        //измените его фоновый цвет, а при потере фокуса восстановите исходный цвет. 
+        document.getElementById("userInputTwo").addEventListener("focus", function(){
+            document.getElementById("userInputTwo").style.backgroundColor = "darkgrey";
+        })
+
+        document.getElementById("userInputTwo").addEventListener("blur", function(){
+          document.getElementById("userInputTwo").style.backgroundColor = "white";
+        })
+
+        //Создайте страницу с изображением и добавьте обработчик события,
+        //который при двойном клике на изображении увеличивает его размер. 
+
+        document.getElementById("myPictureTwo").addEventListener("dblclick", function(){
+            height += 75;
+            width += 75;
+            document.getElementById("myPictureTwo").style.height = height + 'px';
+            document.getElementById("myPictureTwo").style.width = width + 'px';
+        })
+
+        //Создайте список (<ul>) с несколькими элементами (<li>). 
+        //Напишите обработчик события, который при клике на элемент списка выделяет его,
+        //добавляя ему класс "active", а все остальные элементы списка снимает выделение. ]
+   
+        let list = document.querySelector('.myListClass');
+        list.addEventListener('click', e => {
+            if (e.target.classList.contains("myListClass"))
+            return;
+            let selected = list.querySelector(".active");
+            if ( selected && (selected !== e.target) ) 
+            selected.classList.remove('active')
+            e.target.classList.toggle('active') 
+
+        });
+          // ***Написать функцию, которая создает новый элемент и вставляет его перед указанным элементом.
+
+          //list.addEventListener('click', e => {
+          //
+          //  list.insertBefore(insertNewListItem(), e.target);
+          // })
+
+          // ***Написать функцию, которая создает новый элемент и вставляет его перед указанным элементом.
+
+     
+          function insertNewListItem() {
+            const listParent = document.getElementById("myList");
+            const listItem = document.createElement("li");
+            const node = document.createTextNode("This list item is inserted!");
+            listItem.appendChild(node);
+            return listItem;
+           
+          }
+          
+         
+        // ***Написать функцию, которая меняет местами два элемента в списке.
+
+        list.addEventListener('click', e => {
+          
+            swapListItemsPosition();
+      });
+
+       function swapListItemsPosition() {
+       const listParent = document.getElementById("myList");
+       list.addEventListener('click', e =>{
+       listCollection = document.querySelectorAll("li");
+       listCollection.forEach(list =>{
+        if (e.target == listCollection[0]){
+           return console.log('U pressed on first element in the list.It will not be swaped.');
+        } else {
+          const  childNodeToSwap = e.target;
+        listParent.insertBefore(e.target, e.target.previousSibling);
+       
+        }
+       })
+    });
+}
+
+       // Напишите функцию, которая при скроллинге страницы выводит в консоль текущую позицию скролла. 
+       
+        window.addEventListener("scroll", function(event) {
+            let scroll_y = this.scrollY;
+            let scroll_x = this.scrollX;
+            console.log(`"x is: ${scroll_x} px", "y is: ${scroll_y} px"`);
+        })
+        
+        //Создайте кнопку, и при удержании (удержании нажатой) на ней запустите 
+        //таймер, который каждую секунду выводит в консоль сообщение "Прошла секунда". 
+
+        const myTimerButton = document.getElementById("timerButton");
+         let myInterval;
+
+        window.addEventListener("mousedown", event => {
+            
+          clearInterval(myInterval);
+          myInterval = setInterval(myTimer, 1000);
+          myTimerButton.style.color = "red";
+            
+        });
+
+        window.addEventListener("mouseup", event => {
+          
+            myTimerButton.style.color = "black";
+            clearInterval(myInterval);
+            
+        });
+
+    
+        function myTimer() {
+            console.log("One second is passed");
+        }
+        
+     
+        //Напишите функцию, которая при наведении на ссылку в нижнем левом углу окна 
+        //браузера отображает всплывающую подсказку с дополнительной информацией. 
+
+
+        //Создайте форму с полем ввода и кнопкой "Отправить". Напишите обработчик события, 
+        //который при отправке формы проверяет, содержит ли поле ввода только цифры, 
+        //и выводит сообщение об ошибке, если введены другие символы. 
+    
+        document.getElementById("inputButtonRegNumber").addEventListener("click", function() {
+
+            let input;
+            input = document.getElementById("userInputOnlyNumbers").value;
+            let numbers = /^[0-9]+$/;
+
+            if(input.match(numbers))
+            {
+                 alert('Your Registration number has accepted....');
+                return true;
+            }
+            else
+            {
+                alert('Please input numeric characters only');
+                return false;
+            }
+        });
+        
+        
+
+        //Напишите функцию, которая при наведении на ссылку в
+        //нижнем левом углу окна браузера отображает всплывающую
+        //подсказку с дополнительной информацией. 
+
+        window.addEventListener("DOMContentLoaded", contentPosition);
+        window.addEventListener('resize', contentPosition);
+        let timeputId;
+        const tooltip = document.querySelector(".all-tooltip");
+        const fullDiv = document.querySelector('section');
+        
+        function contentPosition(){
+            const pin = document.querySelector('.pin');
+            const content = document.querySelector('.tooltip-content');
+            const arrow = document.querySelector('.arrow');
+            content.style.left = pin.offsetLeft- 230 +'px';
+            content.style.top = pin.offsetTop + 15 + 'px';
+        }
+        contentPosition();
+   
+        const pin = document.querySelector('.pin');
+        const content = document.querySelector('.tooltip-content');
+        pin.addEventListener('mousemove', () => {
+            tooltip.classList.add('active');
+        });
+
+        pin.addEventListener('mouseleave', () => {
+            timeoutId = setTimeout(() =>{
+            tooltip.classList.remove('active');
+            }, 1000)
+        });
+
+        content.addEventListener('mousemove', () =>{
+            clearTimeout(timeoutId);
+            tooltip.classList.add('active');
+        })
+
+        content.addEventListener('mouseleave', () => {
+            timeoutId = setTimeout(() =>{
+            tooltip.classList.remove('active');
+            }, 1000)
+        });
+        
+        // ****Написать функцию, которая создает таблицу умножения заданного размера и добавляет ее в указанный элемент.
+        function addMultTable(element) {
+        const headerItem = document.createElement("h1");
+        const node = document.createTextNode("Таблица умножения");
+        headerItem.appendChild(node); 
+        //parentNode = document.getElementById(element);
+        element.appendChild(headerItem);
+        parentDivItem = document.createElement("div");
+        parentDivItem.classList.add("gridbox");
+        element.appendChild(parentDivItem);
+        for (let j = 1; j <= 9; j++){ 
+            const divItem = document.createElement("div");
+            const textItem = document.createElement("p");
+            for (let i= 1; i <= 9; i++){
+                let y = i * j;
+                let multItem = document.createTextNode(`${i}  "*"  ${j}  = (${y})`);
+                textItem.appendChild(multItem);
+                const brElement = document.createElement("br");
+                textItem.appendChild(brElement);
+            }
+         
+            divItem.appendChild(textItem)
+            parentDivItem.appendChild(divItem);
+          
+         
+        }
+    }
+    document.getElementById("addMultTable").addEventListener('click', e => {
+         addMultTable(e.target);
+       })
+
+       // ****Написать функцию, которая создает слайдер изображений и добавляет его в указанный элемент.
+        const galeryImageArray = [
+        'https://images.unsplash.com/photo-1483068612337-c045daaca40e?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&s=6de8746a693acc34ebe9e9a15c4c18d1',
+        'https://images.unsplash.com/photo-1489914099268-1dad649f76bf?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&s=f21f40bb93bae58300e83f7f72ebb5a5',
+        'https://images.unsplash.com/photo-1490100667990-4fced8021649?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&s=247f52de1a292b8a1877b0c7dd77a291',
+        'https://images.unsplash.com/photo-1494783404829-a93883e74b68?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&s=413f5f5c41f4db69a1474d92419601ac'
+        ]
+
+      function addGalery(element) {
+            const scrollContainer = document.createElement("div");
+            scrollContainer.classList.add("scroll-container");
+            parent = document.getElementById(element);
+            parent.appendChild(scrollContainer);
+
+        galeryImageArray.forEach(function (item) {
+        const imageElement = document.createElement("img");
+        imageElement.src = item;
+        scrollContainer.appendChild(imageElement);
+        })
+
+    }
+
+    function addGaleryCuteOne(element){
+        const cuteGaleryHtml = `
+            <div class='parent'>
+                <div class='slider'>
+                <button  type="button" id='right' class='right' name="button">
+            
+                    <svg version="1.1" id="Capa_1" width='40px' height='40px ' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 477.175 477.175" style="enable-background:new 0 0 477.175 477.175;" xml:space="preserve">
+                    <g>
+                    <path style='fill: #9d9d9d;' d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5
+                        c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z
+                        "/>
+                    </g>
+            
+                    </svg>
+            
+                    </button>
+                <button  type="button" id='left' class='left' name="button">
+                    <svg version="1.1" id="Capa_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 477.175 477.175" style="enable-background:new 0 0 477.175 477.175;" xml:space="preserve">
+                    <g>
+                    <path style='fill: #9d9d9d;' d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225
+                        c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z"/>
+                    </g>
+                    </svg>
+                    </button>
+                <svg id='svg2' class='up2' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <circle id='circle1' class='circle1 steap' cx="34px" cy="49%" r="20"  />
+                    <circle id='circle2' class='circle2 steap' cx="34px" cy="49%" r="100"  />
+                    <circle id='circle3' class='circle3 steap' cx="34px" cy="49%" r="180"  />
+                    <circle id='circle4' class='circle4 steap' cx="34px" cy="49%" r="260"  />
+                    <circle id='circle5' class='circle5 steap' cx="34px" cy="49%" r="340"  />
+                    <circle id='circle6' class='circle6 steap' cx="34px" cy="49%" r="420"  />
+                    <circle id='circle7' class='circle7 steap' cx="34px" cy="49%" r="500"  />
+                    <circle id='circle8' class='circle8 steap' cx="34px" cy="49%" r="580"  />
+                    <circle id='circle9' class='circle9 steap' cx="34px" cy="49%" r="660"  />
+                </svg>
+                <svg id='svg1' class='up2' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <circle id='circle10' class='circle10 steap' cx="648px" cy="49%" r="20"  />
+                    <circle id='circle11' class='circle11 steap' cx="648px" cy="49%" r="100"  />
+                    <circle id='circle12' class='circle12 steap' cx="648px" cy="49%" r="180"  />
+                    <circle id='circle13' class='circle13 steap' cx="648px" cy="49%" r="260"  />
+                    <circle id='circle14' class='circle14 steap' cx="648px" cy="49%" r="340"  />
+                    <circle id='circle15' class='circle15 steap' cx="648px" cy="49%" r="420"  />
+                    <circle id='circle16' class='circle16 steap' cx="648px" cy="49%" r="500"  />
+                    <circle id='circle17' class='circle17 steap' cx="648px" cy="49%" r="580"  />
+                    <circle id='circle18' class='circle18 steap' cx="648px" cy="49%" r="660"  />
+                </svg>
+                <div id='slide1' class='slide1 up1'>MOUNTAIN</div>
+                <div id='slide2' class='slide2'>BEACH</div>
+                <div id='slide3' class='slide3'>FOREST</div>
+                <div id='slide4' class='slide4'>DESERT</div>
+                </div>
+            </div>
+            `;
+       return document.getElementById(element).innerHTML = cuteGaleryHtml;
+       
+           
+    }
+    addGaleryCuteOne("pictureWithButton"); //calling the function on pictureWithButton div to replace it with a Galery 
+    // throught copying html variable(we store our galery html code in it) .
+    addGalery("inputWithAButton");//same but small galery fully created with a function.
+
+//1.Написать рекурсивную функцию для вычисления суммы элементов массива.
+const arr = [10,20,30,40];
+let reccursiveSumOfAnArray = function(array) {
+    return (array.length === 0) ? 0 : array[0] + reccursiveSumOfAnArray(array.slice(1));
+}
+console.log(reccursiveSumOfAnArray(arr));
+//2.Написать рекурсивную функцию для вычисления чисел Фибоначчи.
+
+
+function fibonacci(num) {
+    if(num < 2) {
+        return num;
+    }
+    else {
+        return fibonacci(num-1) + fibonacci(num - 2);
+    }4
+}
+
+
+const fibonacciNumberCount = prompt('How many fibonacci numbers to show: ');
+
+if(fibonacciNumberCount <=0) {
+   console.log('Enter a positive integer.');
+}
+else {
+    for(let i = 0; i < fibonacciNumberCount; i++) {
+       console.log(fibonacci(i));
+   }
+}
+
+//3.Написать рекурсивную функцию для нахождения наибольшего общего делителя двух чисел.
+
+const reccursiveGCD = function(a, b) {
+    if ( ! b) {
+        return a;
+    }
+
+    return reccursiveGCD(b, a % b);
+};
+console.log(reccursiveGCD(360, 336));
+
+//4.Написать рекурсивную функцию для проверки, является ли число простым.
+const primeNumberRecursive = (n, i = 2) => {
+
+   if(n <= 2){
+       return (n == 2 )? true : false;
+    }
+    
+  
+    if( n % i == 0){
+       return false;
+    }
+   
+    if( i * i > n ){
+       return true;
+     }
+   
+ 
+   return primeNumberRecursive(n, i+1);
+ }
+
+console.log(primeNumberRecursive(41));
+
+       // addMultTable("addMultTable");
+        //document.write("<h1>Таблица умножения</h1>"); 
+ 
+        //for (let j = 1; j <= 9; j++){  
+       // document.write("<div style='float: left;font-size: 0.7rem; width: 60px;'>"); 
+       // for (let i = 1; i <=9; i++)  
+       // { 
+        //document.write(i + "*" + j + "=" +(i*j) + "<br>"); 
+ 
+       // }  
+       // document.write ("</div>"); 
+ 
+       // }
+    //}
+   
+
+    /////////////////////////////////////////////////////// 
+  // cuteGalary JS //
+    var curpage = 1;
+var sliding = false;
+var click = true;
+var left = document.getElementById("left");
+var right = document.getElementById("right");
+var pagePrefix = "slide";
+var pageShift = 500;
+var transitionPrefix = "circle";
+var svg = true;
+
+function leftSlide() {
+	if (click) {
+		if (curpage == 1) curpage = 5;
+		console.log("woek");
+		sliding = true;
+		curpage--;
+		svg = true;
+		click = false;
+		for (k = 1; k <= 4; k++) {
+			var a1 = document.getElementById(pagePrefix + k);
+			a1.className += " tran";
+		}
+		setTimeout(() => {
+			move();
+		}, 200);
+		setTimeout(() => {
+			for (k = 1; k <= 4; k++) {
+				var a1 = document.getElementById(pagePrefix + k);
+				a1.classList.remove("tran");
+			}
+		}, 1400);
+	}
+}
+
+function rightSlide() {
+	if (click) {
+		if (curpage == 4) curpage = 0;
+		console.log("woek");
+		sliding = true;
+		curpage++;
+		svg = false;
+		click = false;
+		for (k = 1; k <= 4; k++) {
+			var a1 = document.getElementById(pagePrefix + k);
+			a1.className += " tran";
+		}
+		setTimeout(() => {
+			move();
+		}, 200);
+		setTimeout(() => {
+			for (k = 1; k <= 4; k++) {
+				var a1 = document.getElementById(pagePrefix + k);
+				a1.classList.remove("tran");
+			}
+		}, 1400);
+	}
+}
+
+function move() {
+	if (sliding) {
+		sliding = false;
+		if (svg) {
+			for (j = 1; j <= 9; j++) {
+				var c = document.getElementById(transitionPrefix + j);
+				c.classList.remove("steap");
+				c.setAttribute("class", transitionPrefix + j + " streak");
+				console.log("streak");
+			}
+		} else {
+			for (j = 10; j <= 18; j++) {
+				var c = document.getElementById(transitionPrefix + j);
+				c.classList.remove("steap");
+				c.setAttribute("class", transitionPrefix + j + " streak");
+				console.log("streak");
+			}
+		}
+		setTimeout(() => {
+			for (i = 1; i <= 4; i++) {
+				if (i == curpage) {
+					var a = document.getElementById(pagePrefix + i);
+					a.className += " up1";
+				} else {
+					var b = document.getElementById(pagePrefix + i);
+					b.classList.remove("up1");
+				}
+			}
+			sliding = true;
+		}, 600);
+		setTimeout(() => {
+			click = true;
+		}, 1700);
+
+		setTimeout(() => {
+			if (svg) {
+				for (j = 1; j <= 9; j++) {
+					var c = document.getElementById(transitionPrefix + j);
+					c.classList.remove("streak");
+					c.setAttribute("class", transitionPrefix + j + " steap");
+				}
+			} else {
+				for (j = 10; j <= 18; j++) {
+					var c = document.getElementById(transitionPrefix + j);
+					c.classList.remove("streak");
+					c.setAttribute("class", transitionPrefix + j + " steap");
+				}
+				sliding = true;
+			}
+		}, 850);
+		setTimeout(() => {
+			click = true;
+		}, 1700);
+	}
+}
+
+left.onmousedown = () => {
+	leftSlide();
+};
+
+right.onmousedown = () => {
+	rightSlide();
+};
+
+document.onkeydown = e => {
+	if (e.keyCode == 37) {
+		leftSlide();
+	} else if (e.keyCode == 39) {
+		rightSlide();
+	}
+};
+
+
+
+
+        </script>
+</body>
+</html>
